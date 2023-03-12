@@ -30,6 +30,11 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
+  input{
+    background-color: none;
+    border: none;
+  }
+
   button{
     background-color: none;
     border: none;
