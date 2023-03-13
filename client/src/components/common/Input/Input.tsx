@@ -10,7 +10,14 @@ interface InputProps {
 const Input = ({ name, placeholder }: InputProps) => {
   const { register } = useForm();
 
-  return <InputStyle {...register(name)} id={name} placeholder={placeholder} />;
+  return (
+    <InputStyle
+      {...register(name)}
+      id={name}
+      type={name}
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default Input;
