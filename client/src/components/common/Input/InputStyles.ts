@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { theme } from '../../../styles/theme';
 
@@ -13,11 +13,20 @@ export const InputLabelStyle = styled.label`
   color: ${theme.colors.white};
 `;
 
-export const InputStyle = styled.input`
-  padding: 20px 10px;
+const commonInputStyle = css`
   color: ${theme.colors.white};
   border: 2px solid ${theme.colors.lightGrey};
   border-radius: 10px;
   background-color: ${theme.colors.grey};
   font-size: 2rem;
+`;
+
+export const InputStyle = styled.input`
+  ${commonInputStyle}
+  padding: 20px 10px;
+`;
+
+export const TextareaStyle = styled.textarea`
+  ${commonInputStyle}
+  padding: 15px;
 `;

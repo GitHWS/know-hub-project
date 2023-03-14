@@ -1,22 +1,33 @@
 import { useForm } from 'react-hook-form';
 
-import { InputStyle } from './InputStyles';
+import { InputStyle, TextareaStyle } from './InputStyles';
 
 interface InputProps {
+  element: 'input' | 'textarea';
   name: string;
   placeholder: string | undefined;
 }
 
-const Input = ({ name, placeholder }: InputProps) => {
+const Input = ({ element, name, placeholder }: InputProps) => {
   const { register } = useForm();
 
   return (
-    <InputStyle
-      {...register(name)}
-      id={name}
-      type={name}
-      placeholder={placeholder}
-    />
+    <>
+      {element === 'input' ? (
+        <InputStyle
+          {...register(name)}
+          id={name}
+          type={name}
+          placeholder={placeholder}
+        />
+      ) : (
+        <TextareaStyle
+          {...register(name)}
+          id={name}
+          placeholder={placeholder}
+        />
+      )}
+    </>
   );
 };
 
