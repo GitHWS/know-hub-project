@@ -6,4 +6,6 @@ export const CardStyles = styled.div`
   padding: 20px;
   border-radius: 5px;
   background: ${theme.colors.grey};
+  gap: 10px;
+  width: fit-content;
 `;
