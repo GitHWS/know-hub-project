@@ -17,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body{
-    height:100vh;
+    min-height:100vh;
+    display: grid;
+    place-items: center;
     background-color: ${theme.colors.black};
   }
 
@@ -39,6 +41,21 @@ const GlobalStyle = createGlobalStyle`
     background-color: none;
     border: none;
     cursor: pointer;
+  }
+
+  /* 커스텀 CSS */
+
+  h1, h2, h3{
+    font-weight: 900;
+    color: ${theme.colors.white}
+  }
+
+  h1{
+    font-size: 3rem;
+  }
+
+  h2{
+    font-size: 2.8rem;
   }
 `;
 
