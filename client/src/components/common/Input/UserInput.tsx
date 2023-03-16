@@ -4,8 +4,8 @@ import { Input, Textarea } from './InputStyles';
 
 interface UserInputProps {
   element: 'input' | 'textarea';
-  id: React.HTMLInputTypeAttribute;
-  type: React.HTMLInputTypeAttribute;
+  id: string;
+  type: React.HTMLInputTypeAttribute | undefined;
   placeholder: string | undefined;
 }
 

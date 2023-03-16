@@ -4,7 +4,7 @@ import { InputBox, Label } from './InputStyles';
 interface InputFieldProps {
   element: 'input' | 'textarea';
   label: string;
-  type: React.HTMLInputTypeAttribute;
+  type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
 }
 
@@ -14,7 +14,7 @@ const InputField = ({ element, label, type, placeholder }: InputFieldProps) => {
       <Label htmlFor={type}>{label}</Label>
       <UserInput
         element={element}
-        id={type}
+        id={label}
         type={type}
         placeholder={placeholder}
       />
