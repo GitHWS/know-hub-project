@@ -19,10 +19,10 @@ const UserInput = ({ element, id, type, placeholder }: UserInputProps) => {
           id={id}
           type={type}
           placeholder={placeholder}
-          {...register(type)}
+          {...register(id)}
         />
       ) : (
-        <Textarea id={id} placeholder={placeholder} {...register(type)} />
+        <Textarea id={id} placeholder={placeholder} {...register(id)} />
       )}
     </>
   );
