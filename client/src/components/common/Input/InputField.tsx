@@ -1,22 +1,24 @@
-import React from 'react';
-import Input from './Input';
-import InputLabel from './InputLabel';
-
-import { InputFieldStyle } from './InputStyles';
+import UserInput from './UserInput';
+import { InputBox, Label } from './InputStyles';
 
 interface InputFieldProps {
   element: 'input' | 'textarea';
   label: string;
-  name: string;
+  type: React.HTMLInputTypeAttribute;
   placeholder?: string;
 }
 
-const InputField = ({ element, label, name, placeholder }: InputFieldProps) => {
+const InputField = ({ element, label, type, placeholder }: InputFieldProps) => {
   return (
-    <InputFieldStyle>
-      <InputLabel name={name}>{label}</InputLabel>
-      <Input element={element} name={name} placeholder={placeholder} />
-    </InputFieldStyle>
+    <InputBox>
+      <Label htmlFor={type}>{label}</Label>
+      <UserInput
+        element={element}
+        id={type}
+        type={type}
+        placeholder={placeholder}
+      />
+    </InputBox>
   );
 };
 
