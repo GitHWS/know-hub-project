@@ -1,42 +1,56 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../../../styles/theme';
 
-interface StyledButtonProps {
-  padding: 'lg' | 'md' | 'sm';
-  primary?: boolean;
+interface ButtonProps {
+  size: 'lg' | 'md' | 'sm';
 }
 
-export const ButtonStyles = styled.button<StyledButtonProps>`
-  font-size: 2rem;
-  font-weight: 900;
+// 공통 Button 스타일
+export const ButtonStyle = styled.button<ButtonProps>`
+  padding: 1rem;
+  border-radius: 0.5rem;
 
-  ${({ padding }) =>
-    padding === 'lg' &&
+  font-weight: 900;
+  color: ${theme.colors.white};
+
+  transition: all 0.3s;
+
+  ${({ size }) =>
+    size === 'lg' &&
     css`
-      padding: 15px;
+      width: 100%;
+      padding: 1.5rem;
+      font-size: 2rem;
     `}
-  ${({ padding }) =>
-    padding === 'md' &&
+
+  ${({ size }) =>
+    size === 'md' &&
     css`
-      padding: 10px;
+      min-width: 150px;
+      font-size: 1.8rem;
     `}
-      ${({ padding }) =>
-    padding === 'sm' &&
+
+    ${({ size }) =>
+    size === 'sm' &&
     css`
-      padding: 5px;
+      min-width: 100px;
       font-size: 1.4rem;
     `};
 
-  width: 100%;
-  border-radius: 5px;
-
-  color: ${theme.colors.white};
-  background: ${({ primary }) =>
-    primary ? theme.colors.primary : theme.colors.highlight};
-
-  transition: all 0.2s;
-
   &:hover {
-    background-color: ${({ primary }) => (primary ? '#0059c1' : '#bb4242')};
+    filter: brightness(0.7);
   }
+`;
+
+// 배경색 추가된 버튼(Primary, Highlight, clear)
+export const PrimaryButton = styled(ButtonStyle)`
+  background-color: ${theme.colors.primary};
+`;
+
+export const SecondaryButton = styled(ButtonStyle)`
+  background-color: ${theme.colors.highlight};
+`;
+
+export const ClearButton = styled(ButtonStyle)`
+  background-color: ${theme.colors.lightGrey};
 `;

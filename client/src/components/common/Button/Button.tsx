@@ -1,13 +1,12 @@
-import { ButtonStyles } from './ButtonStyles';
+import { ButtonStyle } from './ButtonStyles';
 
 interface ButtonProps {
-  padding: 'lg' | 'md' | 'sm';
-  primary?: boolean;
+  size: 'lg' | 'md' | 'sm';
   children: React.ReactNode;
 }
 
-const Button = (props: ButtonProps) => {
-  return <ButtonStyles {...props}>{props.children}</ButtonStyles>;
+const Button = ({ size, children, ...rest }: ButtonProps) => {
+  return <ButtonStyle size={size}>{children}</ButtonStyle>;
 };
 
 export default Button;
