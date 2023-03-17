@@ -52,5 +52,5 @@ export const SecondaryButton = styled(ButtonStyle)`
 `;
 
 export const ClearButton = styled(ButtonStyle)`
-  background-color: ${theme.colors.lightGrey};
+  background-color: transparent;
 `;
