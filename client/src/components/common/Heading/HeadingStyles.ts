@@ -29,3 +29,10 @@ export const Heading3 = styled.h3<headingProps>`
   ${commonHeadingStyle}
   font-size: 2.8rem;
 `;
+
+// 가장 작은 폰트 사이즈
+export const Heading4 = styled.h4<headingProps>`
+  ${commonHeadingStyle}
+  font-size: 1.4rem;
+  color: ${theme.colors.lightGrey};
+`;
