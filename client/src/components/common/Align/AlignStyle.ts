@@ -3,7 +3,8 @@ import styled, { css } from 'styled-components';
 interface FlexBoxProps {
   col?: boolean;
   center?: boolean;
-  gap: number;
+  between?: boolean;
+  gap?: number;
 }
 
 export const FlexBox = styled.div<FlexBoxProps>`
@@ -17,6 +18,16 @@ export const FlexBox = styled.div<FlexBoxProps>`
           align-items: center;
         `
       : css`
-          justify-contents: center;
+          justify-content: center;
         `};
+
+  ${({ col, between }) =>
+    !col && between
+      ? css`
+          justify-content: space-between;
+          align-items: center;
+        `
+      : css`
+          justify-content: flex-start;
+        `}
 `;
