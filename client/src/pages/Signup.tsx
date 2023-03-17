@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import Button from '../components/common/Button/Button';
-import { Heading2 } from '../components/common/Heading/HeadingStyles';
+
 import InputField from '../components/common/Input/InputField';
+import { PrimaryButton } from '../components/common/Button/ButtonStyles';
+import { Heading2 } from '../components/common/Heading/HeadingStyles';
 import {
   GridLayout,
   LoginForm,
@@ -28,26 +29,20 @@ const Signup = () => {
                 placeholder="example@example.com"
               />
               <InputField element="input" label="Password" type="password" />
-              <Button padding="lg" primary>
-                다음
-              </Button>
+              <PrimaryButton size="lg">다음</PrimaryButton>
             </>
           )}
           {signupStep === 2 && (
             <>
               <InputField element="input" label="Name" type="text" />
               <InputField element="textarea" label="Bio" />
-              <Button padding="lg" primary>
-                다음
-              </Button>
+              <PrimaryButton size="lg">다음</PrimaryButton>
             </>
           )}
           {signupStep === 3 && (
             <>
               <InputField element="input" label="Profile Image" type="file" />
-              <Button padding="lg" primary>
-                회원가입
-              </Button>
+              <PrimaryButton size="lg">회원가입</PrimaryButton>
             </>
           )}
         </LoginForm>

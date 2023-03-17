@@ -1,6 +1,6 @@
-import Button from '../components/common/Button/Button';
 import InputField from '../components/common/Input/InputField';
 import { Heading2 } from '../components/common/Heading/HeadingStyles';
+import { PrimaryButton } from '../components/common/Button/ButtonStyles';
 import {
   GridLayout,
   LoginForm,
@@ -23,9 +23,7 @@ const Login = () => {
             placeholder="example@example.com"
           />
           <InputField element="input" label="Password" type="password" />
-          <Button padding="lg" primary>
-            로그인
-          </Button>
+          <PrimaryButton size="lg">로그인</PrimaryButton>
         </LoginForm>
         <SignupText>
           처음 방문하셨나요?
