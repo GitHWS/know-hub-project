@@ -10,41 +10,15 @@ interface PostIconButtonProps {
   buttonType: 'like' | undefined;
 }
 
-interface PostContentBoxProps {
-  align: 'row' | 'col';
-  baseline: 'start' | 'end';
-}
-
-export const PostContentBox = styled.div<PostContentBoxProps>`
-  display: flex;
-  ${({ align }) =>
-    align === 'row'
-      ? css`
-          flex-direction: row;
-        `
-      : css`
-          flex-direction: column;
-        `};
-  ${({ baseline }) =>
-    baseline === 'start'
-      ? css`
-          align-items: flex-start;
-        `
-      : css`
-          align-items: flex-end;
-        `};
-  gap: 10px;
+export const PostTitle = styled.h3`
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: ${theme.colors.white};
 `;
 
 export const PostDate = styled.span`
   font-size: 1.2rem;
   color: ${theme.colors.lightGrey};
-`;
-
-export const PostTitle = styled.h3`
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: ${theme.colors.white};
 `;
 
 export const PostContent = styled.p`

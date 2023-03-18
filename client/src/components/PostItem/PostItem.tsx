@@ -1,7 +1,7 @@
+import { FlexAlignBetween, FlexBox } from '../common/Align/AlignStyle';
 import Card from '../common/Card/Card';
 import {
   PostContent,
-  PostContentBox,
   PostDate,
   PostIconBox,
   PostIconButton,
@@ -12,11 +12,11 @@ import {
 const PostItem = () => {
   return (
     <Card>
-      <PostContentBox align="col" baseline="start">
-        <PostContentBox align="row" baseline="end">
+      <FlexAlignBetween col>
+        <FlexBox gap={5} base="end">
           <PostTitle>Post Title</PostTitle>
           <PostDate>2023.03.02</PostDate>
-        </PostContentBox>
+        </FlexBox>
         <PostContent>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
           velit commodi nulla nobis nihil, temporibus aspernatur. Quaerat animi
@@ -29,7 +29,7 @@ const PostItem = () => {
           <PostIconButton buttonType="like" />
           <PostIconButton buttonType={undefined} />
         </PostIconBox>
-      </PostContentBox>
+      </FlexAlignBetween>
       <PostThumbnail />
     </Card>
   );
