@@ -9,6 +9,7 @@ interface ButtonProps {
 export const ButtonStyle = styled.button<ButtonProps>`
   padding: 1rem;
   border-radius: 0.5rem;
+  height: fit-content;
 
   font-weight: 900;
   color: ${theme.colors.white};
