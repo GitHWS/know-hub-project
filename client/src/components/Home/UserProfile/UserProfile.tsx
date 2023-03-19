@@ -1,5 +1,5 @@
-import { FlexBox } from '../common/Align/AlignStyle';
-import { PrimaryButton } from '../common/Button/ButtonStyles';
+import { FlexBox } from '../../common/Align/AlignStyle';
+import { PrimaryButton } from '../../common/Button/ButtonStyles';
 import {
   ProfileBio,
   ProfileImage,

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import iconCreate from '../../assets/images/icon_create.svg';
+import iconCreate from '../../../assets/images/icon_create.svg';
 
 const rotateAni = keyframes`
   from{

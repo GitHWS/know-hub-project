@@ -1,8 +1,8 @@
-import { FlexAlignBetween, FlexBox } from '../common/Align/AlignStyle';
-import { Heading4 } from '../common/Heading/HeadingStyles';
+import { FlexAlignBetween, FlexBox } from '../../common/Align/AlignStyle';
+import { Heading4 } from '../../common/Heading/HeadingStyles';
 import { CategoryMenuList, CreateCategoryButton } from './CategoryMenuStyles';
-import TabButton from '../common/Button/TabButton';
-import { SecondaryButton } from '../common/Button/ButtonStyles';
+import TabButton from '../../common/Button/TabButton';
+import { SecondaryButton } from '../../common/Button/ButtonStyles';
 
 const CategoryMenu = () => {
   return (
