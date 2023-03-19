@@ -1,8 +1,7 @@
-import { FlexAlignBetween, FlexBox } from '../../common/Align/AlignStyle';
+import { FlexAlignBetween, FlexBox } from '../../common/Layout/LayoutStyles';
 import { Heading4 } from '../../common/Heading/HeadingStyles';
 import { CategoryMenuList, CreateCategoryButton } from './CategoryMenuStyles';
 import TabButton from '../../common/Button/TabButton';
-import { SecondaryButton } from '../../common/Button/ButtonStyles';
 
 const CategoryMenu = () => {
   return (
@@ -15,9 +14,6 @@ const CategoryMenu = () => {
         <TabButton title="react">React</TabButton>
         <TabButton title="vue">Vue</TabButton>
       </CategoryMenuList>
-      <div>
-        <SecondaryButton size="lg">로그아웃</SecondaryButton>
-      </div>
     </FlexBox>
   );
 };

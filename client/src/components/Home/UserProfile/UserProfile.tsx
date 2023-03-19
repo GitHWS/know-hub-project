@@ -1,4 +1,4 @@
-import { FlexBox } from '../../common/Align/AlignStyle';
+import { FlexBox } from '../../common/Layout/LayoutStyles';
 import { PrimaryButton } from '../../common/Button/ButtonStyles';
 import {
   ProfileBio,
