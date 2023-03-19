@@ -1,4 +1,4 @@
-import { FlexAlignBetween, FlexBox } from '../common/Align/AlignStyle';
+import { FlexAlignBetween, FlexBox } from '../common/Layout/LayoutStyles';
 import Card from '../common/Card/Card';
 import {
   PostContent,

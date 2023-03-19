@@ -22,12 +22,13 @@ export const PostDate = styled.span`
 `;
 
 export const PostContent = styled.p`
-  max-width: 590px;
+  max-width: 450px;
 
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  line-height: 1.3;
 
   font-size: 1.4rem;
   color: ${theme.colors.lightGrey};
