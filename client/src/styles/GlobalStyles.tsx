@@ -13,11 +13,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html{
+    // 기본 폰트 사이즈 10px로 고정
     font-size: 62.5%;
   }
 
   body{
-    background-color: ${theme.colors.black};
+    background-color: ${theme.colors.common.black};
   }
 
   ul, ol{
@@ -41,18 +42,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   /* 커스텀 CSS */
-
-  h1, h2, h3{
-    font-weight: 900;
-    color: ${theme.colors.white}
-  }
-
-  h1{
-    font-size: 3rem;
-  }
-
-  h2{
-    font-size: 2.8rem;
+  h1, h2, h3, h4, h5, h6{
+    font-weight: ${theme.font.weight.bold};
+    color: ${theme.colors.font.white}
   }
 `;
 
