@@ -8,18 +8,18 @@ export const ProfileImage = styled.img`
 `;
 
 export const ProfileName = styled.span`
-  color: ${theme.colors.white};
+  color: ${theme.colors.font.white};
   font-size: 1.8rem;
   font-weight: 900;
 `;
 
 export const ProfileJob = styled.span`
-  color: ${theme.colors.lightGrey};
+  color: ${theme.colors.font.lightGrey};
   font-size: 1.2rem;
 `;
 
 export const ProfileBio = styled.p`
-  color: ${theme.colors.white};
+  color: ${theme.colors.font.white};
   font-size: 1.4rem;
   text-align: center;
 

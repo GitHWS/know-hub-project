@@ -5,7 +5,7 @@ export const CardStyles = styled.div`
   display: flex;
   padding: 20px;
   border-radius: 5px;
-  background: ${theme.colors.grey};
+  background: ${theme.colors.common.grey};
   gap: 10px;
   width: fit-content;
 `;

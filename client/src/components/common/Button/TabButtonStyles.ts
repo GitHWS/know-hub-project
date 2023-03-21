@@ -24,13 +24,13 @@ export const TabButtonStyles = styled.button<StyledTabButtonProps>`
   ${({ isSelected }) =>
     isSelected
       ? css`
-          font-weight: 900;
-          color: ${theme.colors.white};
-          background-color: ${theme.colors.primary};
+          font-weight: ${theme.font.weight.bold};
+          color: ${theme.colors.font.white};
+          background-color: ${theme.colors.bg.primary};
         `
       : css`
-          color: ${theme.colors.lightGrey};
-          background-color: ${theme.colors.grey};
+          color: ${theme.colors.font.white};
+          background-color: ${theme.colors.common.grey};
         `}
 
   &::before {

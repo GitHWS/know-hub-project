@@ -7,7 +7,7 @@ interface headingProps {
 
 const commonHeadingStyle = css<headingProps>`
   font-weight: 900;
-  color: ${theme.colors.white};
+  color: ${theme.colors.font.white};
   ${({ center }) =>
     center &&
     css`
@@ -17,22 +17,22 @@ const commonHeadingStyle = css<headingProps>`
 
 export const Heading1 = styled.h1<headingProps>`
   ${commonHeadingStyle}
-  font-size: 6rem;
+  font-size: ${theme.font.size.h1};
 `;
 
 export const Heading2 = styled.h2<headingProps>`
   ${commonHeadingStyle}
-  font-size: 3rem;
+  font-size: ${theme.font.size.h2};
 `;
 
 export const Heading3 = styled.h3<headingProps>`
   ${commonHeadingStyle}
-  font-size: 2.8rem;
+  font-size: ${theme.font.size.h3};
 `;
 
 // 가장 작은 폰트 사이즈
 export const Heading4 = styled.h4<headingProps>`
   ${commonHeadingStyle}
-  font-size: 1.4rem;
-  color: ${theme.colors.lightGrey};
+  font-size: ${theme.font.size.h4};
+  color: ${theme.colors.font.lightGrey};
 `;

@@ -13,12 +13,12 @@ interface PostIconButtonProps {
 export const PostTitle = styled.h3`
   font-size: 2.8rem;
   font-weight: bold;
-  color: ${theme.colors.white};
+  color: ${theme.colors.font.white};
 `;
 
 export const PostDate = styled.span`
   font-size: 1.2rem;
-  color: ${theme.colors.lightGrey};
+  color: ${theme.colors.font.lightGrey};
 `;
 
 export const PostContent = styled.p`
@@ -31,7 +31,7 @@ export const PostContent = styled.p`
   line-height: 1.3;
 
   font-size: 1.4rem;
-  color: ${theme.colors.lightGrey};
+  color: ${theme.colors.font.lightGrey};
 `;
 
 export const PostIconBox = styled.div`

@@ -3,27 +3,27 @@ import { theme } from '../../../styles/theme';
 import sideImage from '../../../assets/images/bg-side_image.jpg';
 
 export interface FlexBoxProps {
-  // 레이아웃
-  padding?: string;
+  styleProps?: {
+    padding?: string;
+    overflow?: 'hidden' | 'scroll';
+    base?: 'start' | 'center' | 'end';
+  };
   col?: boolean;
-  overflow?: 'hidden' | 'scroll';
-  base?: 'start' | 'center' | 'end';
   gap?: number;
+}
 
-  // 스타일
+export interface FlexBoxWithBackground extends FlexBoxProps {
   bg?: 'image' | 'black';
 }
 
-export const FlexBox = styled.div<FlexBoxProps>`
+export const BaseFlexBox = styled.div<FlexBoxProps>`
   display: flex;
   flex-direction: ${({ col }) => (col ? 'column' : 'row')};
   gap: ${({ gap }) => `${gap}px`};
-  padding: ${({ padding }) => padding ?? '0'};
-  overflow: ${({ overflow }) =>
-    overflow && overflow === 'hidden' ? 'hidden' : 'auto'};
+  padding: ${({ styleProps }) => styleProps?.padding ?? '0'};
 
-  ${({ overflow }) => {
-    switch (overflow) {
+  ${({ styleProps }) => {
+    switch (styleProps?.overflow) {
       case 'hidden':
         return css`
           overflow: hidden;
@@ -39,8 +39,8 @@ export const FlexBox = styled.div<FlexBoxProps>`
     }
   }}
 
-  ${({ base }) => {
-    switch (base) {
+  ${({ styleProps }) => {
+    switch (styleProps?.base) {
       case 'start':
         return css`
           align-items: flex-start;
@@ -55,8 +55,9 @@ export const FlexBox = styled.div<FlexBoxProps>`
         `;
     }
   }}
+`;
 
-  // 스타일
+export const FlexBoxWithBackground = styled(BaseFlexBox)<FlexBoxWithBackground>`
   ${({ bg }) => {
     switch (bg) {
       case 'image':
@@ -68,24 +69,22 @@ export const FlexBox = styled.div<FlexBoxProps>`
         `;
       case 'black':
         return css`
-          background-color: ${theme.colors.black};
+          background-color: ${theme.colors.common.black};
         `;
       default:
         return css`
-          background-color: ${theme.colors.grey};
+          background-color: ${theme.colors.common.grey};
         `;
     }
   }}
 `;
 
-// FlexBox 내 첫 요소와 마지막 요소를 양쪽 끝으로 정렬하고 사이에 위치한 요소는 일정한 간격으로 정렬(메인 엑시스)
-export const FlexAlignBetween = styled(FlexBox)`
-  justify-content: space-between;
+export const CenterAlignedBox = styled(BaseFlexBox)`
+  justify-content: center;
 `;
 
-// FlexBox 내 요소를 정중앙으로 정렬(메인 엑시스)
-export const FlexAlignCenter = styled(FlexBox)`
-  justify-content: center;
+export const BetweenAlignedBox = styled(BaseFlexBox)`
+  justify-content: space-between;
 `;
 
 export const CenterGridLayout = styled.div`

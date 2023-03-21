@@ -12,7 +12,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   height: fit-content;
 
   font-weight: 900;
-  color: ${theme.colors.white};
+  color: ${theme.colors.font.white};
 
   transition: all 0.3s;
 
@@ -45,11 +45,11 @@ export const ButtonStyle = styled.button<ButtonProps>`
 
 // 배경색 추가된 버튼(Primary, Highlight, clear)
 export const PrimaryButton = styled(ButtonStyle)`
-  background-color: ${theme.colors.primary};
+  background-color: ${theme.colors.bg.primary};
 `;
 
 export const SecondaryButton = styled(ButtonStyle)`
-  background-color: ${theme.colors.highlight};
+  background-color: ${theme.colors.bg.highlight};
 `;
 
 export const ClearButton = styled(ButtonStyle)`
