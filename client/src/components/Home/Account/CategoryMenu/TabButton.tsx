@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TabButtonStyles } from './TabButtonStyles';
+import { TabButtonStyles } from './TabButton.style';
 
 interface TabButtonProps {
   title: string;

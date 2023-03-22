@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { theme } from '../../styles/theme';
 
 export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
+  ${theme.layout.flex.col};
   gap: 20px;
 `;
 

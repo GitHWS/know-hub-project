@@ -1,49 +1,45 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../../../styles/theme';
+import { ButtonSizeType } from './Button';
 
 interface ButtonProps {
-  size: 'lg' | 'md' | 'sm';
+  size: ButtonSizeType;
 }
 
-// 공통 Button 스타일
 export const ButtonStyle = styled.button<ButtonProps>`
   padding: 1rem;
   border-radius: 0.5rem;
   height: fit-content;
 
-  font-weight: 900;
+  font-size: ${theme.font.size.sm};
+  font-weight: ${theme.font.weight.bold};
   color: ${theme.colors.font.white};
 
   transition: all 0.3s;
 
-  ${({ size }) =>
-    size === 'lg' &&
-    css`
-      width: 100%;
-      padding: 1.5rem;
-      font-size: 2rem;
-    `}
-
-  ${({ size }) =>
-    size === 'md' &&
-    css`
-      min-width: 150px;
-      font-size: 1.8rem;
-    `}
-
-    ${({ size }) =>
-    size === 'sm' &&
-    css`
-      min-width: 100px;
-      font-size: 1.4rem;
-    `};
+  ${({ size }) => {
+    switch (size) {
+      case 'lg':
+        return css`
+          width: 100%;
+          padding: 1.5rem;
+        `;
+      case 'md':
+        return css`
+          min-width: 150px;
+        `;
+      case 'sm':
+        return css`
+          min-width: 100px;
+        `;
+    }
+  }}
 
   &:hover {
     filter: brightness(0.7);
   }
 `;
 
-// 배경색 추가된 버튼(Primary, Highlight, clear)
 export const PrimaryButton = styled(ButtonStyle)`
   background-color: ${theme.colors.bg.primary};
 `;

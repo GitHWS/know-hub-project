@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body{
+    height:100vh;
+    overflow: hidden;
     background-color: ${theme.colors.common.black};
   }
 
@@ -30,9 +32,18 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
+  input, textarea{
+    outline: none;
+  }
+
   input{
     background-color: none;
     border: none;
+  }
+
+  textarea{
+    font-family: Arial, sans-serif;
+    resize: none;
   }
 
   button{

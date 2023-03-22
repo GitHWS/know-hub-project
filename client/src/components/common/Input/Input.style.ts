@@ -2,32 +2,26 @@ import styled, { css } from 'styled-components';
 
 import { theme } from '../../../styles/theme';
 
-export const InputBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-`;
-
 export const Label = styled.label`
   font-size: 1.5rem;
   color: ${theme.colors.font.lightGrey};
 `;
 
 const commonInputStyle = css`
+  padding: 1.5rem 1rem;
   width: 100%;
+  border-radius: 1rem;
   border: 2px solid ${theme.colors.font.lightGrey};
-  border-radius: 10px;
-  font-size: 1.8rem;
   color: ${theme.colors.font.white};
   background-color: ${theme.colors.common.grey};
+  font-size: 1.6rem;
 `;
 
 export const Input = styled.input`
   ${commonInputStyle}
-  padding: 10px 5px;
 `;
 
 export const Textarea = styled.textarea`
   ${commonInputStyle}
-  padding: 10px;
+  height: 10rem;
 `;

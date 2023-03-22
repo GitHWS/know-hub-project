@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import { theme } from '../../styles/theme';
+import { theme } from '../../../../styles/theme';
 
-import iconLike from '../../assets/images/icon_like.svg';
-import iconPostMenu from '../../assets/images/icon_post_menu.svg';
-import thumbnail from '../.././assets/images/thumbnail.png';
+import iconLike from '../../../../assets/images/icon_like.svg';
+import iconPostMenu from '../../../../assets/images/icon_post_menu.svg';
+import thumbnail from '../../../../assets/images/thumbnail.png';
 
 interface PostIconButtonProps {
   buttonType: 'like' | undefined;

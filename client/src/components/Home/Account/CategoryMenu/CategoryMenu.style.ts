@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import iconCreate from '../../../assets/images/icon_create.svg';
+import iconCreate from '../../../../assets/images/icon_create.svg';
 
 const rotateAni = keyframes`
   from{
@@ -8,12 +8,6 @@ const rotateAni = keyframes`
   to{
     transform: rotate(45deg);
   }
-`;
-
-export const CategoryMenuList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 `;
 
 export const CreateCategoryButton = styled.button`

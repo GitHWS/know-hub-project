@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-import { Input, Textarea } from './InputStyles';
+import { Input, Textarea } from './Input.style';
 
 interface UserInputProps {
   element: 'input' | 'textarea';

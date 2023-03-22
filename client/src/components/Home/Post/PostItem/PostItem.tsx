@@ -1,5 +1,5 @@
-import { BetweenAlignedBox, BaseFlexBox } from '../common/Layout/LayoutStyles';
-import Card from '../common/Card/Card';
+import Container from '../../../common/Container/Container';
+import { FlexBox } from '../../../common/Layout/Layout.style';
 import {
   PostContent,
   PostDate,
@@ -7,16 +7,16 @@ import {
   PostIconButton,
   PostThumbnail,
   PostTitle,
-} from './PostItemStyles';
+} from './PostItem.style';
 
 const PostItem = () => {
   return (
-    <Card>
-      <BetweenAlignedBox col>
-        <BaseFlexBox gap={5} styleProps={{ base: 'end' }}>
+    <Container variant="post">
+      <FlexBox col between>
+        <FlexBox gap={5} base="end">
           <PostTitle>Post Title</PostTitle>
           <PostDate>2023.03.02</PostDate>
-        </BaseFlexBox>
+        </FlexBox>
         <PostContent>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
           velit commodi nulla nobis nihil, temporibus aspernatur. Quaerat animi
@@ -29,9 +29,9 @@ const PostItem = () => {
           <PostIconButton buttonType="like" />
           <PostIconButton buttonType={undefined} />
         </PostIconBox>
-      </BetweenAlignedBox>
+      </FlexBox>
       <PostThumbnail />
-    </Card>
+    </Container>
   );
 };
 

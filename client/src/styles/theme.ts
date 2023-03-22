@@ -1,14 +1,12 @@
 import { css } from 'styled-components';
 
-// 기존 pixel을
 const pxToRem = (size: number) => `${size / 10}rem`;
 
 const font = {
   size: {
-    h1: pxToRem(60),
-    h2: pxToRem(30),
-    h3: pxToRem(28),
-    h4: pxToRem(14),
+    lg: pxToRem(60),
+    md: pxToRem(30),
+    sm: pxToRem(14),
   },
   weight: {
     bold: 900,
@@ -32,15 +30,19 @@ const colors = {
 
 const layout = {
   flex: {
-    centerRow: css`
+    row: css`
       display: flex;
+    `,
+    col: css`
+      display: flex;
+      flex-direction: column;
+    `,
+    center: css`
       justify-content: center;
       align-items: center;
     `,
-    centerColumn: css`
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    between: css`
+      justify-content: space-between;
       align-items: center;
     `,
   },

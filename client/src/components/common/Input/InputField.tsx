@@ -1,5 +1,6 @@
 import UserInput from './UserInput';
-import { InputBox, Label } from './InputStyles';
+import { Label } from './Input.style';
+import { FlexBox } from '../Layout/Layout.style';
 
 interface InputFieldProps {
   element: 'input' | 'textarea';
@@ -10,7 +11,7 @@ interface InputFieldProps {
 
 const InputField = ({ element, label, type, placeholder }: InputFieldProps) => {
   return (
-    <InputBox>
+    <FlexBox col gap={5}>
       <Label htmlFor={type}>{label}</Label>
       <UserInput
         element={element}
@@ -18,7 +19,7 @@ const InputField = ({ element, label, type, placeholder }: InputFieldProps) => {
         type={type}
         placeholder={placeholder}
       />
-    </InputBox>
+    </FlexBox>
   );
 };
 
