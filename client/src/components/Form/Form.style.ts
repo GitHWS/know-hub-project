@@ -24,3 +24,8 @@ export const SignupLink = styled(Link)`
     color: ${theme.colors.bg.primary};
   }
 `;
+
+export const ErrorMessage = styled.span`
+  font-size: 1.2rem;
+  color: ${theme.colors.bg.highlight};
+`;
