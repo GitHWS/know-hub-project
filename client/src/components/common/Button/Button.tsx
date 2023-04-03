@@ -1,4 +1,4 @@
-import { ButtonStyle } from './Button.style';
+import { StyledButton } from './Button.style';
 
 export type ButtonSizeType = 'lg' | 'md' | 'sm';
 
@@ -8,7 +8,7 @@ interface ButtonProps {
 }
 
 const Button = ({ size, children }: ButtonProps) => {
-  return <ButtonStyle size={size}>{children}</ButtonStyle>;
+  return <StyledButton size={size}>{children}</StyledButton>;
 };
 
 export default Button;
