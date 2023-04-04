@@ -6,7 +6,7 @@ interface ButtonProps {
   size: ButtonSizeType;
 }
 
-export const ButtonStyle = styled.button<ButtonProps>`
+export const StyledButton = styled.button<ButtonProps>`
   padding: 1rem;
   border-radius: 0.5rem;
   height: fit-content;
@@ -40,14 +40,14 @@ export const ButtonStyle = styled.button<ButtonProps>`
   }
 `;
 
-export const PrimaryButton = styled(ButtonStyle)`
+export const PrimaryButton = styled(StyledButton)`
   background-color: ${theme.colors.bg.primary};
 `;
 
-export const SecondaryButton = styled(ButtonStyle)`
+export const SecondaryButton = styled(StyledButton)`
   background-color: ${theme.colors.bg.highlight};
 `;
 
-export const ClearButton = styled(ButtonStyle)`
+export const ClearButton = styled(StyledButton)`
   background-color: transparent;
 `;

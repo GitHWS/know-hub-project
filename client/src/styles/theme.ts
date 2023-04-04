@@ -1,63 +1,23 @@
-import { css } from 'styled-components';
-
-const pxToRem = (size: number) => `${size / 10}rem`;
-
-const font = {
-  size: {
-    lg: pxToRem(60),
-    md: pxToRem(30),
-    sm: pxToRem(14),
+const theme = {
+  colors: {
+    black: '#191919',
+    grey: '#262626',
+    lightGrey: '#8c8c8c',
+    white: '#ffffff',
+    primary: '#0073fa',
+    secondary: '#f34e4e',
   },
-  weight: {
+  fontSizes: {
+    xxl: '6rem',
+    xl: '3rem',
+    lg: '2rem',
+    md: '1.8rem',
+    base: '1.4rem',
+    sm: '1.2rem',
+  },
+  fontWeight: {
     bold: 900,
   },
 };
 
-const colors = {
-  common: {
-    black: '#191919',
-    grey: '#262626',
-  },
-  bg: {
-    primary: '#0073fa',
-    highlight: '#f34e4e',
-  },
-  font: {
-    lightGrey: '#8c8c8c',
-    white: '#ffffff',
-  },
-};
-
-const layout = {
-  flex: {
-    row: css`
-      display: flex;
-    `,
-    col: css`
-      display: flex;
-      flex-direction: column;
-    `,
-    center: css`
-      justify-content: center;
-      align-items: center;
-    `,
-    between: css`
-      justify-content: space-between;
-      align-items: center;
-    `,
-  },
-
-  grid: {
-    center: css`
-      height: 100vh;
-      display: grid;
-      place-items: center;
-    `,
-  },
-};
-
-export const theme = {
-  font,
-  colors,
-  layout,
-};
+export default theme;
