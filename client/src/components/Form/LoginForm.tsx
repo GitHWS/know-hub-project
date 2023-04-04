@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-import { FlexBox } from '../common/Layout/Layout.style';
+import InputField from '../common/Input/InputField';
+
 import { Input, Label } from '../common/Input/Input.style';
 import { PrimaryButton } from '../common/Button/Button.style';
 import { ErrorMessage, Form } from './Form.style';
@@ -35,7 +36,7 @@ const LoginForm = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FlexBox col gap={7}>
+      <InputField>
         <Label htmlFor="email">이메일</Label>
         <Input
           autoComplete="off"
@@ -52,8 +53,8 @@ const LoginForm = () => {
           })}
         />
         {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
-      </FlexBox>
-      <FlexBox col gap={7}>
+      </InputField>
+      <InputField>
         <Label htmlFor="password">비밀번호</Label>
         <Input
           id="password"
@@ -70,7 +71,7 @@ const LoginForm = () => {
         {errors.password && (
           <ErrorMessage>{errors.password.message}</ErrorMessage>
         )}
-      </FlexBox>
+      </InputField>
       <PrimaryButton size="lg">로그인</PrimaryButton>
     </Form>
   );

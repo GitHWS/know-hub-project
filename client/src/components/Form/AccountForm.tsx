@@ -1,6 +1,6 @@
 import { useFormContext } from 'react-hook-form';
 
-import { FlexBox } from '../common/Layout/Layout.style';
+import InputField from '../common/Input/InputField';
 import { Input, Label } from '../common/Input/Input.style';
 import { ErrorMessage } from './Form.style';
 
@@ -21,7 +21,7 @@ const AccountForm = ({ email, password, updateFields }: AccountFormProps) => {
 
   return (
     <>
-      <FlexBox col gap={7}>
+      <InputField>
         <Label htmlFor="email">이메일</Label>
         <Input
           autoComplete="off"
@@ -42,8 +42,8 @@ const AccountForm = ({ email, password, updateFields }: AccountFormProps) => {
           })}
         />
         {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
-      </FlexBox>
-      <FlexBox col gap={7}>
+      </InputField>
+      <InputField>
         <Label htmlFor="password">비밀번호</Label>
         <Input
           id="password"
@@ -64,7 +64,7 @@ const AccountForm = ({ email, password, updateFields }: AccountFormProps) => {
         {errors.password && (
           <ErrorMessage>{errors.password.message}</ErrorMessage>
         )}
-      </FlexBox>
+      </InputField>
     </>
   );
 };

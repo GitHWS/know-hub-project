@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import theme from '../../../styles/theme';
 
 import { Variant } from './Container';
 
@@ -11,7 +11,7 @@ interface ContainerProps {
 }
 
 export const StyledContainer = styled.div<ContainerProps>`
-  background-color: ${theme.colors.common.grey};
+  background-color: ${theme.colors.grey};
 
   ${({ variant }) =>
     variant === 'form'
@@ -20,7 +20,8 @@ export const StyledContainer = styled.div<ContainerProps>`
           width: 25vw;
         `
       : css`
-          ${theme.layout.flex.row};
+          display: flex;
+          flex-grow: 1;
           padding: 2rem;
           border-radius: 0.5rem;
         `}

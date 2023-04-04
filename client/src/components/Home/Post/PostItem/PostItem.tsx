@@ -1,37 +1,27 @@
-import Container from '../../../common/Container/Container';
-import { FlexBox } from '../../../common/Layout/Layout.style';
-import {
-  PostContent,
-  PostDate,
-  PostIconBox,
-  PostIconButton,
-  PostThumbnail,
-  PostTitle,
-} from './PostItem.style';
+import Card from '../../../common/Card/Card';
+import PostItemContent from './PostItemContent';
+
+import { FlexContainerAlign } from '../../../common/Layout/Layout.style';
+import { PostThumbnail } from './PostItem.style';
 
 const PostItem = () => {
   return (
-    <Container variant="post">
-      <FlexBox col between>
-        <FlexBox gap={5} base="end">
-          <PostTitle>Post Title</PostTitle>
-          <PostDate>2023.03.02</PostDate>
-        </FlexBox>
-        <PostContent>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-          velit commodi nulla nobis nihil, temporibus aspernatur. Quaerat animi
-          mollitia, tempora voluptates dolore quam corporis! Amet qui accusamus
-          soluta commodi consequatur. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing
-          elit.
-        </PostContent>
-        <PostIconBox>
-          <PostIconButton buttonType="like" />
-          <PostIconButton buttonType={undefined} />
-        </PostIconBox>
-      </FlexBox>
-      <PostThumbnail />
-    </Container>
+    <Card
+      styles={{
+        backgroundColor: '#262626',
+        padding: '1.5rem',
+      }}>
+      <FlexContainerAlign
+        justifyContent="space-between"
+        alignItems="center"
+        gap={1}>
+        <PostItemContent />
+        <PostThumbnail
+          src="https://images.unsplash.com/photo-1680000827819-c4bb72ed594d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+          alt="게시물 이미지"
+        />
+      </FlexContainerAlign>
+    </Card>
   );
 };
 

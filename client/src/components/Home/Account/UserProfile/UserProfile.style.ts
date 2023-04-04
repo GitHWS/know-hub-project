@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../../../styles/theme';
+import theme from '../../../../styles/theme';
 
 export const ProfileImage = styled.img`
   width: 20rem;
@@ -8,18 +8,18 @@ export const ProfileImage = styled.img`
 `;
 
 export const ProfileName = styled.span`
-  color: ${theme.colors.font.white};
+  color: ${theme.colors.white};
   font-size: 1.8rem;
   font-weight: 900;
 `;
 
 export const ProfileJob = styled.span`
-  color: ${theme.colors.font.lightGrey};
+  color: ${theme.colors.lightGrey};
   font-size: 1.2rem;
 `;
 
 export const ProfileBio = styled.p`
-  color: ${theme.colors.font.white};
+  color: ${theme.colors.white};
   font-size: 1.4rem;
   text-align: center;
 

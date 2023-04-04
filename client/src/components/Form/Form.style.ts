@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { theme } from '../../styles/theme';
+import theme from '../../styles/theme';
 
 export const Form = styled.form`
-  ${theme.layout.flex.col};
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 `;
 
 export const SignupText = styled.p`
   text-align: center;
   font-size: 1.6rem;
-  color: ${theme.colors.font.white};
+  color: ${theme.colors.white};
 `;
 
 export const SignupLink = styled(Link)`
@@ -21,11 +22,11 @@ export const SignupLink = styled(Link)`
 
   &:hover,
   &:active {
-    color: ${theme.colors.bg.primary};
+    color: ${theme.colors.primary};
   }
 `;
 
 export const ErrorMessage = styled.span`
   font-size: 1.2rem;
-  color: ${theme.colors.bg.highlight};
+  color: ${theme.colors.secondary};
 `;
