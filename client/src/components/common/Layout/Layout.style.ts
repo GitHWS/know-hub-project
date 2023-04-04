@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import theme from '../../../styles/theme';
 
 interface FlexBoxProps {
   col?: boolean;
@@ -15,57 +15,53 @@ interface FlexBoxProps {
   };
 }
 
-export const FlexBox = styled.div<FlexBoxProps>`
-  ${({ col }) => (col ? theme.layout.flex.col : theme.layout.flex.row)}
-  ${({ between }) => between && theme.layout.flex.between}
-  ${({ center }) => center && theme.layout.flex.center}
-  gap: ${({ gap }) => gap && `${gap / 10}rem`};
+type JustifyContentValue =
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'initial'
+  | 'inherit';
 
-  ${({ base }) => {
-    switch (base) {
-      case 'start':
-        return css`
-          align-items: flex-start;
-        `;
-      case 'center':
-        return css`
-          align-items: center;
-        `;
-      case 'end':
-        return css`
-          align-items: flex-end;
-        `;
-      default:
-        return css`
-          align-items: stretch;
-        `;
-    }
-  }}
+type AlignItemsValue =
+  | 'normal'
+  | 'stretch'
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'baseline'
+  | 'initial'
+  | 'inherit';
 
-  ${({ styleProps }) =>
-    styleProps?.overflow === 'hidden' &&
-    css`
-      overflow: hidden;
-    `}
+interface FlexContainerProps {
+  col?: boolean;
+  gap?: number;
+}
 
-    ${({ styleProps }) =>
-    styleProps?.overflow === 'scroll' &&
-    css`
-      overflow: scroll;
-    `}
+interface FlexContainerAlignProps extends FlexContainerProps {
+  justifyContent?: JustifyContentValue;
+  alignItems?: AlignItemsValue;
+}
 
-  ${({ styleProps }) =>
-    styleProps?.padding &&
-    css`
-      padding: ${styleProps.padding / 10}rem;
-    `}
-
-  ${({ styleProps }) =>
-    styleProps?.bg &&
-    css`
-      background-color: ${theme.colors.common.grey};
-    `}
+export const FlexContainer = styled.div<FlexContainerProps>`
+  display: flex;
+  flex-direction: ${({ col }) => (col ? 'column' : 'row')};
+  gap: ${({ gap }) => gap && `${gap}rem`};
 `;
+
+export const FlexContainerAlign = styled(
+  FlexContainer
+)<FlexContainerAlignProps>`
+  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignItems }) => alignItems};
+`;
+
+FlexContainerAlign.defaultProps = {
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+};
 
 export const CenterGridLayout = styled.div`
   display: grid;
@@ -74,6 +70,7 @@ export const CenterGridLayout = styled.div`
 `;
 
 export const HomeLayout = styled.div`
-  display: flex;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 2fr;
+  grid-template-rows: 100vh;
 `;

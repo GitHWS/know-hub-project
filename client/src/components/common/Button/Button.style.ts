@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import theme from '../../../styles/theme';
 import { ButtonSizeType } from './Button';
 
 interface ButtonProps {
@@ -11,9 +11,9 @@ export const StyledButton = styled.button<ButtonProps>`
   border-radius: 0.5rem;
   height: fit-content;
 
-  font-size: ${theme.font.size.sm};
-  font-weight: ${theme.font.weight.bold};
-  color: ${theme.colors.font.white};
+  font-size: ${theme.fontSizes.base};
+  font-weight: ${theme.fontWeight.bold};
+  color: ${theme.colors.white};
 
   transition: all 0.3s;
 
@@ -41,11 +41,11 @@ export const StyledButton = styled.button<ButtonProps>`
 `;
 
 export const PrimaryButton = styled(StyledButton)`
-  background-color: ${theme.colors.bg.primary};
+  background-color: ${theme.colors.primary};
 `;
 
 export const SecondaryButton = styled(StyledButton)`
-  background-color: ${theme.colors.bg.highlight};
+  background-color: ${theme.colors.secondary};
 `;
 
 export const ClearButton = styled(StyledButton)`

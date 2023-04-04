@@ -1,6 +1,7 @@
 import { useFormContext } from 'react-hook-form';
 
-import { FlexBox } from '../common/Layout/Layout.style';
+import InputField from '../common/Input/InputField';
+
 import { Input, Label, Textarea } from '../common/Input/Input.style';
 import { ErrorMessage } from './Form.style';
 
@@ -21,7 +22,7 @@ const UserForm = ({ name, bio, updateFields }: UserFormProps) => {
 
   return (
     <>
-      <FlexBox col gap={7}>
+      <InputField>
         <Label htmlFor="name">이름</Label>
         <Input
           autoComplete="off"
@@ -39,8 +40,8 @@ const UserForm = ({ name, bio, updateFields }: UserFormProps) => {
           })}
         />
         {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
-      </FlexBox>
-      <FlexBox col gap={7}>
+      </InputField>
+      <InputField>
         <Label htmlFor="bio">소개글</Label>
         <Textarea
           autoComplete="off"
@@ -56,7 +57,7 @@ const UserForm = ({ name, bio, updateFields }: UserFormProps) => {
           })}
         />
         {errors.bio && <ErrorMessage>{errors.bio.message}</ErrorMessage>}
-      </FlexBox>
+      </InputField>
     </>
   );
 };

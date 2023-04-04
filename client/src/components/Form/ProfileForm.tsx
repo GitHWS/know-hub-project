@@ -1,6 +1,7 @@
 import { useFormContext } from 'react-hook-form';
 
-import { FlexBox } from '../common/Layout/Layout.style';
+import InputField from '../common/Input/InputField';
+
 import { Input, Label } from '../common/Input/Input.style';
 import { ErrorMessage } from './Form.style';
 
@@ -21,7 +22,7 @@ const ProfileForm = ({ job, updateFields }: ProfileFormProps) => {
 
   return (
     <>
-      <FlexBox col gap={7}>
+      <InputField>
         <Label htmlFor="job">직업</Label>
         <Input
           autoComplete="off"
@@ -37,8 +38,8 @@ const ProfileForm = ({ job, updateFields }: ProfileFormProps) => {
           })}
         />
         {errors.job && <ErrorMessage>{errors.job.message}</ErrorMessage>}
-      </FlexBox>
-      <FlexBox col gap={7}>
+      </InputField>
+      <InputField>
         <Label htmlFor="profile">프로필 이미지</Label>
         <Input
           id="profile"
@@ -53,7 +54,7 @@ const ProfileForm = ({ job, updateFields }: ProfileFormProps) => {
         {errors.profile && (
           <ErrorMessage>{errors.profile.message}</ErrorMessage>
         )}
-      </FlexBox>
+      </InputField>
     </>
   );
 };

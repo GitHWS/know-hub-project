@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../../../styles/theme';
+import theme from '../../../../styles/theme';
 
 import iconReact from '../../../../assets/images/icon_react.svg';
 import iconVue from '../../../../assets/images/icon_vue.svg';
@@ -23,13 +23,13 @@ export const TabButtonStyles = styled.button<StyledTabButtonProps>`
   ${({ isSelected }) =>
     isSelected
       ? css`
-          font-weight: ${theme.font.weight.bold};
-          color: ${theme.colors.font.white};
-          background-color: ${theme.colors.bg.primary};
+          font-weight: ${theme.fontWeight.bold};
+          color: ${theme.colors.white};
+          background-color: ${theme.colors.primary};
         `
       : css`
-          color: ${theme.colors.font.white};
-          background-color: ${theme.colors.common.grey};
+          color: ${theme.colors.white};
+          background-color: ${theme.colors.grey};
         `}
 
   &::before {

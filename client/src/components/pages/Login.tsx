@@ -1,26 +1,31 @@
 import Container from '../common/Container/Container';
 import LoginForm from '../Form/LoginForm';
 
-import { CenterGridLayout, FlexBox } from '../common/Layout/Layout.style';
+import { CenterGridLayout } from '../common/Layout/Layout.style';
 import { ContainerWithBackground } from '../common/Container/Container.style';
 import { Heading2 } from '../common/Heading/Heading.style';
 import { SignupText, SignupLink } from '../Form/Form.style';
+import { FlexContainerAlign } from '../common/Layout/Layout.style';
 
 const Login = () => {
   return (
     <CenterGridLayout>
-      <FlexBox>
+      <div>
         <ContainerWithBackground bg variant="form" />
         <Container variant="form">
-          <FlexBox col center gap={40}>
+          <FlexContainerAlign
+            col
+            justifyContent="center"
+            alignItems="stretch"
+            gap={4}>
             <Heading2 center>로그인</Heading2>
             <LoginForm />
             <SignupText>
               처음 방문하셨나요? <SignupLink to="/signup">회원가입</SignupLink>
             </SignupText>
-          </FlexBox>
+          </FlexContainerAlign>
         </Container>
-      </FlexBox>
+      </div>
     </CenterGridLayout>
   );
 };
